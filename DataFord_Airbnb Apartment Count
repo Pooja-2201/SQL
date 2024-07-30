@@ -1,0 +1,26 @@
+Write a query to find the number of apartments per nationality that are owned by people under 30 years old. Output the nationality along with the number of apartments.
+airbnb_hosts table:
+COLUMN NAME	    DESCRIPTION
+host_id	      Identifier for each host
+age	          Age of the host
+gender	      Gender of the host
+nationality	  Nationality of the host
+
+airbnb_units table:
+COLUMN NAME	    DESCRIPTION
+host_id	      Identifier for the host
+unit_id	      Identifier for each unit
+
+Example Output:
+NATIONALITY	  APARTMENTS_COUNT
+American	        3
+French	          2
+
+Solution:
+SELECT 
+    h.nationality AS NATIONALITY,
+    COUNT(u.unit_id) AS APARTMENTS_COUNT
+FROM airbnb_hosts h
+INNER JOIN airbnb_units u ON h.host_id = u.host_id
+WHERE h.age < 30
+GROUP BY h.nationality;
