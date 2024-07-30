@@ -1,3 +1,20 @@
+Amazon has partnered with multiple airlines to enhance their in-flight entertainment systems. As part of this initiative, you are tasked with developing a feature that suggests movies from Amazon's content database.
+For flight 101, suggest movies with runtimes less than or equal to the flight's duration.
+entertainment_catalog table:
+Column Name	    Description
+movie_id	    Identifier of movie
+title	        Title of movie
+duration	    Duration in minutes
+flight_schedule table:
+Column Name        	Description
+flight_id	        Identifier of flight
+flight_duration	    Flight duration
+flight_date	        Flight date
+Example output:
+flight_id	movie_id	movie_duration
+101	            3	        60
+
+Solution:
 SELECT
     flight_schedule.flight_id,
     entertainment_catalog.movie_id,
