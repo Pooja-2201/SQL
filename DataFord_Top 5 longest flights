@@ -1,0 +1,20 @@
+Identify the top 5 longest US flights by distance.
+Output includes the corresponding origin, destination, and distance. Sort the flights from longest to shortest.
+
+us_flights table:
+Column Name    	Description
+flight_num	    Flight number
+origin	        Origin name
+dest	          Destination name
+distance	      Distance value
+
+Example output:
+origin	dest	distance
+SFO	     MIA	  2585
+JFK	     SMF	  2521
+
+Solution:
+SELECT DISTINCT origin , dest , distance 
+FROM us_flights 
+ORDER BY distance DESC
+LIMIT 5;
