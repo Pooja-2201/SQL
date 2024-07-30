@@ -1,5 +1,4 @@
 -- https://dataford.io/sql/Airbnb-Apartment-Count
-Solution:
 SELECT 
     h.nationality AS NATIONALITY,
     COUNT(u.unit_id) AS APARTMENTS_COUNT
